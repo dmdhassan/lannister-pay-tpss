@@ -6,7 +6,7 @@ app.use(express.json())
 
 
 app.get('/', (req, res) => {
-    res.send('This is to confirm Lannister TPSS is working')
+    res.send('A lanister always pays his debt, might split it though.')
 })
 
 app.post('/split-payments/compute', (req, res) => {
