@@ -6,7 +6,7 @@ app.use(express.json())
 
 
 app.get('/', (req, res) => {
-    res.send('Hello Your app is working')
+    res.send('This is to confirm Lannister TPSS is working')
 })
 
 app.post('/split-payments/compute', (req, res) => {
@@ -117,7 +117,7 @@ app.post('/split-payments/compute', (req, res) => {
 
 
 app.use('*', (req, res) => {
-    res.send('Get Away')
+    res.send('Get Away, You are on the wrong side')
 })
 
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
