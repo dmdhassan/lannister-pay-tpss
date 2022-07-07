@@ -1,6 +1,7 @@
 const express = require('express')
 const PORT = process.env.PORT || 5000;
 
+// Initialize express
 const app = express()
 app.use(express.json())
 
@@ -13,9 +14,15 @@ app.post('/split-payments/compute', (req, res) => {
 
   // Collect request body from post endpoint
     const { ID, Amount, Currency, CustomerEmail, SplitInfo } = req.body
+    
+    if (!ID || !Amount || !SplitInfo) {
+      res.status(400).json({
+        'Error': 400,
+        'message': 'invalid or incomplete transaction credentials'
+      })
+    }    
 
     let currentBalance = Amount
-
 
   // Determine the total number of ratio in the ratio split type
 
